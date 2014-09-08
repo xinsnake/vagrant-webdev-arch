@@ -49,7 +49,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = "terrywang/arch"
   config.vm.box_url = "http://cloud.terry.im/vagrant/archlinux-x86_64.box"
-  config.vm.provision "shell", inline: $script, run: "always"
+  config.vm.provision "shell", inline: $script
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   config.vm.network "private_network", ip: "192.168.155.10", auto_config:false
