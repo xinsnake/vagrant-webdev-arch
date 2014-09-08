@@ -29,7 +29,18 @@ mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.vagrantbkp
 cp /vagrant/env/config/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
 chmod 644 /etc/pacman.d/mirrorlist
 pacman -Syyu --noconfirm
-pacman -S --noconfirm apache mariadb mariadb-clients php php-fpm php-gd php-mcrypt php-sqlite php-geoip phpmyadmin xdebug nodejs
+pacman -S --noconfirm apache mariadb mariadb-clients php php-fpm php-gd php-mcrypt php-sqlite php-geoip phpmyadmin xdebug nodejs nfs-utils
+
+#
+# NFS file system
+#
+echo
+echo '== Setting up NFS =='
+echo
+systemctl start nfs-client.target
+systemctl enable nfs-client.target
+systemctl start rpcbind.service
+systemctl enable rpcbind.service
 
 #
 # Configure MySQL
