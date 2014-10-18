@@ -22,8 +22,15 @@ $ vagrant up
   * pm.localhost.dev (mapped to /usr/share/webapps/phpMyAdmin)
 
 * Please note:
-  * Keep your internet conection on and if you have a data limit please watch out. The base box will need around 400MB data and the provisoning process will need around 100MB.
-  * The total deploy time with 1MB/s internet connection is 15~20 minutes, assuming you have reasonable hardware configuration.
+  * Keep your internet conection on and if you have a data limit please watch out. The base box will need around 400MB
+      data and the provisoning process will need around 100MB.
+  * The total deploy time with 1MB/s internet connection is 15~20 minutes, assuming you have reasonable hardware
+      configuration.
+
+# VirtualBox and NFS file sharing #
+
+You may notice the performance issue using VirtualBox and native file sharing, uncomment the ``config.vm.synced_folder``
+__after__ the first "vagrant up". If you do it on the first "vagrant up", you will receive an error.
 
 # Quick summary of the configuration #
 
@@ -38,4 +45,5 @@ $ vagrant up
 # Resources #
 
 * If you are new to Vagrant, please checkout http://www.vagrantup.com/ for a quick start
-* Arch Linux base box is based on Terry Wang's Arch Linux https://github.com/terrywang/vagrantboxes/blob/master/archlinux-x86_64.md
+* Arch Linux base box is based on Terry Wang's Arch Linux
+    https://github.com/terrywang/vagrantboxes/blob/master/archlinux-x86_64.md

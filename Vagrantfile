@@ -1,3 +1,6 @@
+#
+# vim: syntax=ruby
+#
 
 $script = <<'SCRIPT'
 
