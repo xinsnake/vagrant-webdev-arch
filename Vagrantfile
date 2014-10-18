@@ -54,7 +54,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://cloud.terry.im/vagrant/archlinux-x86_64.box"
   config.vm.provision "shell", inline: $script
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
-  config.vm.synced_folder "./", "/vagrant/", type: "nfs", mount_options: ['rw', 'vers=3', 'tcp', 'fsc']
+  #config.vm.synced_folder "./", "/vagrant/", type: "nfs", mount_options: ['rw', 'vers=3', 'tcp', 'fsc']
 
   config.vm.network "private_network", ip: "192.168.155.10", auto_config:false
 
