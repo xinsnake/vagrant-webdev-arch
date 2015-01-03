@@ -19,7 +19,7 @@ $ vagrant up
 
 * Default VirtualHost
   * localhost.dev (mapped to /vagrant/wwwroot)
-  * pm.localhost.dev (mapped to /usr/share/webapps/phpMyAdmin)
+  * pm.localhost.dev (mapped to /usr/share/webapps/phpMyAdmin) default root password: password
 
 * Please note:
   * Keep your internet conection on and if you have a data limit please watch out. The base box will need around 400MB
