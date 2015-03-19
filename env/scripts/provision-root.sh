@@ -48,6 +48,7 @@ systemctl enable rpcbind.service
 echo
 echo '== Setting up MySQL =='
 echo
+mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 systemctl enable mysqld
 systemctl start mysqld
 
