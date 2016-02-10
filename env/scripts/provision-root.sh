@@ -29,7 +29,7 @@ mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.vagrantbkp
 cp /vagrant/env/config/etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist
 chmod 644 /etc/pacman.d/mirrorlist
 pacman -Syyu --noconfirm
-pacman -S --noconfirm apache mariadb mariadb-clients php php-fpm php-gd php-mcrypt php-sqlite php-geoip phpmyadmin xdebug nodejs nfs-utils
+pacman -S --noconfirm apache mariadb mariadb-clients php php-fpm php-gd php-mcrypt php-sqlite php-geoip phpmyadmin xdebug nodejs npm nfs-utils
 
 #
 # NFS file system
@@ -48,6 +48,7 @@ systemctl enable rpcbind.service
 echo
 echo '== Setting up MySQL =='
 echo
+mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 systemctl enable mysqld
 systemctl start mysqld
 
@@ -107,7 +108,7 @@ systemctl restart httpd
 echo
 echo '== Configuring phpMyAdmin =='
 echo
-mysql -u root -ppassword < /usr/share/webapps/phpMyAdmin/examples/create_tables.sql
+mysql -u root -ppassword < /usr/share/webapps/phpMyAdmin/sql/create_tables.sql
 
 mv /etc/webapps/phpmyadmin/config.inc.php /etc/webapps/phpmyadmin/config.inc.php.vagrantbkp
 cp $CFG/etc/webapps/phpmyadmin/config.inc.php /etc/webapps/phpmyadmin/config.inc.php
